@@ -1,0 +1,62 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+.venv/
+env/
+ENV/
+venv/
+VENV/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# Python egg files
+*.egg
+*.egg-info/
+dist/
+build/
+
+# Logs and databases
+*.log
+*.sqlite3
+
+# Pytest
+.cache/
+
+# Output folders
+output/
+*.pth
+*.tmp
+*.bak
+
+# Datasets
+dataset/wavs/
+*.csv
+*.json
+
+# Configurations
+*.ini
+*.cfg
+
+# Temporary files
+*.tmp
+*.swp
+*.swo
+*~
+
+# System files
+.DS_Store
+Thumbs.db
+
+# VS Code settings
+.vscode/
+
+# Python package installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# IDE Settings
+.idea/
