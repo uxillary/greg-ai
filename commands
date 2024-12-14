@@ -1,7 +1,14 @@
-start venv:
+# start venv:
 .venv\Scripts\activate
 
-
-check version:
+# check version
 pip show
 pip list
+
+# test cuda (gpu)
+python
+
+import torch
+print("Torch version:", torch.__version__)
+print("CUDA available:", torch.cuda.is_available())
+print("CUDA version:", torch.version.cuda)
