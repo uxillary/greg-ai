@@ -1,2 +1,7 @@
-start venv
+start venv:
 .venv\Scripts\activate
+
+
+check version:
+pip show
+pip list
