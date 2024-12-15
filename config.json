@@ -30,7 +30,7 @@
     "_comment_training_config": "Defines training hyperparameters.",
     "training_config": {
       "_comment_model": "Model architecture (e.g., 'Tacotron2').",
-      "model": "Tacotron2",
+      "model": "tts_models/en/ljspeech/tacotron2-DDC",
       "_comment_epochs": "Number of training epochs.",
       "epochs": 100,
       "_comment_batch_size": "Number of samples per training batch.",
