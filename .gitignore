@@ -34,8 +34,6 @@ output/
 
 # Datasets
 dataset/wavs/
-*.csv
-*.json
 
 # Configurations
 *.ini
