@@ -1,5 +1,7 @@
 import json
 from TTS.api import TTS
+from TTS.bin.train_tts import main as train_tts_main
+import sys
 
 # Load the configuration
 with open("config.json", "r") as f:
@@ -15,12 +17,13 @@ output_test_path = "output/test-output.wav"
 tts.tts_to_file(text=test_text, file_path=output_test_path)
 print(f"Test audio generated: {output_test_path}")
 
-# Fine-tune the model if pre-trained model test is successful
+# Fine-tuning
 print("Starting fine-tuning...")
-tts.finetune(
-    dataset_path=config["dataset_config"]["path"],
-    output_path=config["output_config"]["output_path"],
-    config_path="config.json"
-)
+sys.argv = [
+    "train_tts",                    # Placeholder for script name
+    "--config_path", "config.json", # Path to your config.json
+    "--output_path", config["output_config"]["output_path"] # Output directory
+]
+train_tts_main()
 
 print("Training Complete! Model and logs saved to:", config["output_config"]["output_path"])

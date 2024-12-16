@@ -81,14 +81,12 @@ C:\Users\trigg\Documents\GitHub\greg-ai\.venv\lib\site-packages\TTS\utils\io.py:
 Removing weight norm...
  > Text splitted to sentences.
 ['Hello, this is a test of text-to-speech synthesis.']
- > Processing time: 2.176298141479492
- > Real-time factor: 0.5339524436935063
+ > Processing time: 2.1950130462646484
+ > Real-time factor: 0.5164764135877529
 Test audio generated: output/test-output.wav
 Starting fine-tuning...
 Traceback (most recent call last):
-  File "C:\Users\trigg\Documents\GitHub\greg-ai\main.py", line 20, in <module>
-    tts.finetune(
-  File "C:\Users\trigg\Documents\GitHub\greg-ai\.venv\lib\site-packages\torch\nn\modules\module.py", line 1931, in __getattr__
-    raise AttributeError(
-AttributeError: 'TTS' object has no attribute 'finetune'
+  File "C:\Users\trigg\Documents\GitHub\greg-ai\main.py", line 25, in <module>
+    train_tts_main(args)
+TypeError: main() takes 0 positional arguments but 1 was given
 (.venv) PS C:\Users\trigg\Documents\GitHub\greg-ai> 
