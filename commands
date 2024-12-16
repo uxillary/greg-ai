@@ -3,6 +3,9 @@
 
 # check version
 pip show
+pip show TTS
+pip install --upgrade TTS
+pip install TTS[train]
 pip list
 
 # test cuda (gpu)
@@ -15,3 +18,4 @@ print("CUDA version:", torch.version.cuda)
 
 # run metadata Speech To Text
 python generate-metadata.py
+python main.py

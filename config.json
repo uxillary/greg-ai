@@ -12,7 +12,7 @@
     "mel_fmax": 8000
   },
 "dataset_config": {
-    "formatter": "LJSpeech",
+    "formatter": "ljspeech",
     "path": "dataset/",
     "meta_file_train": "metadata.csv",
     "meta_file_val": "metadata_val.csv"
