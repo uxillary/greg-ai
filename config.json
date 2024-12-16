@@ -1,65 +1,37 @@
 {
-    "_comment_audio_config": "Defines audio preprocessing settings.",
-    "audio_config": {
-      "_comment_sample_rate": "Sample rate of audio files in Hz (e.g., 22050 Hz).",
-      "sample_rate": 22050,
-      "_comment_fft_size": "FFT size for spectrogram generation.",
-      "fft_size": 1024,
-      "_comment_win_length": "Window size for STFT.",
-      "win_length": 1024,
-      "_comment_hop_length": "Hop size for STFT.",
-      "hop_length": 256,
-      "_comment_num_mels": "Number of mel filter banks.",
-      "num_mels": 80,
-      "_comment_mel_fmin": "Minimum frequency for mel spectrograms.",
-      "mel_fmin": 0,
-      "_comment_mel_fmax": "Maximum frequency for mel spectrograms.",
-      "mel_fmax": 8000
-    },
-    "_comment_dataset_config": "Specifies dataset-related settings.",
-    "dataset_config": {
-      "_comment_formatter": "Dataset format (e.g., 'ljspeech' for LJSpeech-style metadata).",
-      "formatter": "ljspeech",
-      "_comment_path": "Path to your dataset directory.",
-      "path": "dataset/",
-      "_comment_meta_file_train": "Metadata file for training data.",
-      "meta_file_train": "metadata.csv",
-      "_comment_meta_file_val": "Metadata file for validation data.",
-      "meta_file_val": "metadata_val.csv"
-    },
-    "_comment_training_config": "Defines training hyperparameters.",
-    "training_config": {
-      "_comment_model": "Model architecture (e.g., 'Tacotron2').",
-      "model": "tts_models/en/ljspeech/tacotron2-DDC",
-      "_comment_epochs": "Number of training epochs.",
-      "epochs": 100,
-      "_comment_batch_size": "Number of samples per training batch.",
-      "batch_size": 16,
-      "_comment_learning_rate": "Learning rate for the optimizer.",
-      "learning_rate": 0.001,
-      "_comment_gradient_clip": "Max gradient norm for gradient clipping.",
-      "gradient_clip": 1.0,
-      "_comment_num_loader_workers": "Number of CPU workers for data loading.",
-      "num_loader_workers": 4,
-      "_comment_num_eval_loader_workers": "Number of CPU workers for evaluation data loading.",
-      "num_eval_loader_workers": 4,
-      "_comment_checkpoint_interval": "Save model checkpoints every N epochs.",
-      "checkpoint_interval": 5,
-      "_comment_eval_interval": "Perform evaluation every N epochs.",
-      "eval_interval": 5,
-      "_comment_use_cuda": "Whether to use GPU (true for GPU, false for CPU).",
-      "use_cuda": true,
-      "_comment_mixed_precision": "Whether to use mixed precision training.",
-      "mixed_precision": false
-    },
-    "_comment_output_config": "Specifies where to save model outputs.",
-    "output_config": {
-      "_comment_output_path": "Base output directory.",
-      "output_path": "output/",
-      "_comment_checkpoint_dir": "Directory for saving model checkpoints.",
-      "checkpoint_dir": "output/checkpoints",
-      "_comment_log_dir": "Directory for logs and metrics.",
-      "log_dir": "output/logs"
-    }
+  "model": "Tacotron2",
+  "generator_model": "HiFi-GAN",
+  "_comment_audio_config": "Defines audio preprocessing settings.",
+  "audio_config": {
+    "sample_rate": 22050,
+    "fft_size": 1024,
+    "win_length": 1024,
+    "hop_length": 256,
+    "num_mels": 80,
+    "mel_fmin": 0,
+    "mel_fmax": 8000
+  },
+"dataset_config": {
+    "formatter": "LJSpeech",
+    "path": "dataset/",
+    "meta_file_train": "metadata.csv",
+    "meta_file_val": "metadata_val.csv"
+},
+  "training_config": {
+    "epochs": 100,
+    "batch_size": 16,
+    "learning_rate": 0.001,
+    "gradient_clip": 1.0,
+    "num_loader_workers": 4,
+    "num_eval_loader_workers": 4,
+    "checkpoint_interval": 5,
+    "eval_interval": 5,
+    "use_cuda": true,
+    "mixed_precision": false
+  },
+  "output_config": {
+    "output_path": "output/",
+    "checkpoint_dir": "output/checkpoints",
+    "log_dir": "output/logs"
   }
-  
+}
