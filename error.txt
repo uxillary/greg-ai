@@ -1,11 +1,8 @@
->> 
- > Downloading model to C:\Users\trigg\AppData\Local\tts\tts_models--en--ljspeech--tacotron2-DDC
- 99%|██████████████████████████████████████████████████████████████▎| 111M/113M [00:02<00:00, 55.3MiB/s] > Model's license - apache 2.0
- > Check https://choosealicense.com/licenses/apache-2.0/ for more info.
- > Downloading model to C:\Users\trigg\AppData\Local\tts\vocoder_models--en--ljspeech--hifigan_v2
-100%|███████████████████████████████████████████████████████████████| 113M/113M [00:03<00:00, 36.6MiB/s]
-  0%|                                                                      | 0.00/3.80M [00:00<?, ?iB/s] > Model's license - apache 2.0█████████████████▎                  | 2.64M/3.80M [00:00<00:00, 26.4MiB/s]
- > Check https://choosealicense.com/licenses/apache-2.0/ for more info.
+(.venv) PS C:\Users\trigg\Documents\GitHub\greg-ai> python main.py
+>>
+Testing pre-trained model...
+ > tts_models/en/ljspeech/tacotron2-DDC is already downloaded.
+ > vocoder_models/en/ljspeech/hifigan_v2 is already downloaded.
  > Using model: Tacotron2
  > Setting up Audio Processor...
  | > sample_rate:22050
@@ -82,11 +79,16 @@ C:\Users\trigg\Documents\GitHub\greg-ai\.venv\lib\site-packages\TTS\utils\io.py:
  > Generator Model: hifigan_generator
  > Discriminator Model: hifigan_discriminator
 Removing weight norm...
+ > Text splitted to sentences.
+['Hello, this is a test of text-to-speech synthesis.']
+ > Processing time: 2.176298141479492
+ > Real-time factor: 0.5339524436935063
+Test audio generated: output/test-output.wav
+Starting fine-tuning...
 Traceback (most recent call last):
-  File "C:\Users\trigg\Documents\GitHub\greg-ai\main.py", line 12, in <module>
+  File "C:\Users\trigg\Documents\GitHub\greg-ai\main.py", line 20, in <module>
     tts.finetune(
   File "C:\Users\trigg\Documents\GitHub\greg-ai\.venv\lib\site-packages\torch\nn\modules\module.py", line 1931, in __getattr__
     raise AttributeError(
 AttributeError: 'TTS' object has no attribute 'finetune'
-100%|█████████████████████████████████████████████████████████████| 3.80M/3.80M [00:01<00:00, 3.61MiB/s]
 (.venv) PS C:\Users\trigg\Documents\GitHub\greg-ai> 
