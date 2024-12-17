@@ -20,10 +20,15 @@ print(f"Test audio generated: {output_test_path}")
 # Fine-tuning
 print("Starting fine-tuning...")
 sys.argv = [
-    "train_tts",                    # Placeholder for script name
-    "--config_path", "config.json", # Path to your config.json
-    "--output_path", config["output_config"]["output_path"] # Output directory
+    "train_tts",  # This simulates the script name
+    "--config_path", "config.json",
+    "--output_path", "output/"
 ]
-train_tts_main()
 
-print("Training Complete! Model and logs saved to:", config["output_config"]["output_path"])
+# Call the training function
+try:
+    train_tts_main()
+except Exception as e:
+    print("Fine-tuning failed:", e)
+
+print("Training Complete! Model and logs saved to:", "output/")

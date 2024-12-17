@@ -1,7 +1,11 @@
 {
   "model": "Tacotron2",
   "generator_model": "HiFi-GAN",
-  "_comment_audio_config": "Defines audio preprocessing settings.",
+  "dataset_config": {
+    "formatter": "ljspeech",
+    "path": "dataset/",
+    "meta_file_train": "metadata.csv"
+  },
   "audio_config": {
     "sample_rate": 22050,
     "fft_size": 1024,
@@ -11,18 +15,11 @@
     "mel_fmin": 0,
     "mel_fmax": 8000
   },
-  "datasets": [
-    {
-      "name": "ljspeech",
-      "path": "greg-ai/dataset/LJSpeech-1.1",
-      "meta_file": "metadata.csv"
-    }
-  ],
   "training_config": {
     "epochs": 100,
     "batch_size": 16,
-    "learning_rate": 0.001,
     "gradient_clip": 1.0,
+    "learning_rate": 0.001,
     "num_loader_workers": 4,
     "num_eval_loader_workers": 4,
     "checkpoint_interval": 5,

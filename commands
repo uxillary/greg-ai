@@ -3,6 +3,9 @@
 
 python main.py
 
+#use coqui tts cli for training
+python -m TTS.bin.train_tts --config_path config.json --output_path output/
+
 # check version
 pip show
 pip show TTS
