@@ -11,14 +11,13 @@
     "mel_fmin": 0,
     "mel_fmax": 8000
   },
-"dataset_config": {
-    "formatter": "ljspeech",
-    "path": "dataset/",
-    "root_path": "dataset/LJSpeech-1.1",
-    "meta_file": "metadata.csv",
-    "meta_file_train": "metadata.csv",
-    "meta_file_val": "metadata_val.csv"
-},
+  "datasets": [
+    {
+      "name": "ljspeech",
+      "path": "greg-ai/dataset/LJSpeech-1.1",
+      "meta_file": "metadata.csv"
+    }
+  ],
   "training_config": {
     "epochs": 100,
     "batch_size": 16,

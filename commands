@@ -1,6 +1,8 @@
 # start venv:
 .venv\Scripts\activate
 
+python main.py
+
 # check version
 pip show
 pip show TTS
@@ -18,4 +20,3 @@ print("CUDA version:", torch.version.cuda)
 
 # run metadata Speech To Text
 python generate-metadata.py
-python main.py
