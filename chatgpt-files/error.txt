@@ -1,22 +1,112 @@
-PS C:\Users\trigg\Documents\GitHub\greg-ai> .venv\Scripts\activate
-(.venv) PS C:\Users\trigg\Documents\GitHub\greg-ai> python -m TTS.bin.train_tts --config_path config.json --output_path output/
-Full loaded config: Tacotron2Config(output_path='output', logger_uri=None, run_name='run', project_name=None, run_description='🐸Coqui trainer run.', print_step=25, plot_step=100, model_param_stats=False, wandb_entity=None, dashboard_logger='tensorboard', save_on_interrupt=True, log_model_step=None, save_step=10000, save_n_checkpoints=5, save_checkpoints=True, save_all_best=False, save_best_after=0, target_loss=None, print_eval=False, test_delay_epochs=0, run_eval=True, run_eval_steps=None, distributed_backend='nccl', distributed_url='tcp://localhost:54321', mixed_precision=False, precision='fp16', epochs=1000, batch_size=32, eval_batch_size=16, grad_clip=5.0, scheduler_after_epoch=True, lr=0.0001, optimizer='RAdam', optimizer_params={'betas': [0.9, 0.998], 'weight_decay': 1e-06}, lr_scheduler='NoamLR', lr_scheduler_params={'warmup_steps': 4000}, use_grad_scaler=False, allow_tf32=False, cudnn_enable=True, cudnn_deterministic=False, cudnn_benchmark=False, training_seed=54321, model='Tacotron2', num_loader_workers=0, num_eval_loader_workers=0, use_noise_augment=False, audio=BaseAudioConfig(fft_size=1024, win_length=1024, hop_length=256, frame_shift_ms=None, frame_length_ms=None, stft_pad_mode='reflect', sample_rate=22050, resample=False, preemphasis=0.0, ref_level_db=20, do_sound_norm=False, log_func='np.log10', do_trim_silence=True, trim_db=45, do_rms_norm=False, db_level=None, power=1.5, griffin_lim_iters=60, num_mels=80, mel_fmin=0.0, mel_fmax=None, spec_gain=20, do_amp_to_db_linear=True, do_amp_to_db_mel=True, pitch_fmax=640.0, pitch_fmin=1.0, signal_norm=True, min_level_db=-100, symmetric_norm=True, max_norm=4.0, clip_norm=True, stats_path=None), use_phonemes=False, phonemizer=None, phoneme_language=None, compute_input_seq_cache=False, text_cleaner=None, enable_eos_bos_chars=False, test_sentences_file='', phoneme_cache_path=None, characters=None, add_blank=False, batch_group_size=0, loss_masking=True, min_audio_len=1, max_audio_len=inf, min_text_len=1, max_text_len=inf, compute_f0=False, compute_energy=False, compute_linear_spec=False, precompute_num_workers=0, start_by_longest=False, shuffle=False, drop_last=False, datasets=[BaseDatasetConfig(formatter='', dataset_name='', path='', meta_file_train='', ignored_speakers=None, language='', phonemizer='', meta_file_val='', meta_file_attn_mask='')], test_sentences=["It took me quite a long time to develop a voice, and now that I have it I'm not going to be silent.", 'Be a voice, not an echo.', "I'm sorry Dave. I'm afraid I can't do that.", "This cake is great. It's so delicious and moist.", 'Prior to November 22, 1963.'], eval_split_max_size=None, eval_split_size=0.01, use_speaker_weighted_sampler=False, speaker_weighted_sampler_alpha=1.0, use_language_weighted_sampler=False, language_weighted_sampler_alpha=1.0, use_length_weighted_sampler=False, length_weighted_sampler_alpha=1.0, use_gst=False, gst=None, gst_style_input=None, use_capacitron_vae=False, capacitron_vae=None, num_speakers=1, num_chars=0, r=2, gradual_training=None, memory_size=-1, prenet_type='original', prenet_dropout=True, prenet_dropout_at_inference=False, stopnet=True, separate_stopnet=True, stopnet_pos_weight=0.2, max_decoder_steps=10000, encoder_in_features=512, decoder_in_features=512, decoder_output_dim=80, out_channels=80, attention_type='original', attention_heads=None, attention_norm='sigmoid', attention_win=False, windowing=False, use_forward_attn=False, forward_attn_mask=False, transition_agent=False, location_attn=True, bidirectional_decoder=False, double_decoder_consistency=False, ddc_r=6, speakers_file=None, use_speaker_embedding=False, speaker_embedding_dim=512, use_d_vector_file=False, d_vector_file=False, d_vector_dim=None, seq_len_norm=False, decoder_loss_alpha=0.25, postnet_loss_alpha=0.25, postnet_diff_spec_alpha=0.25, decoder_diff_spec_alpha=0.25, decoder_ssim_alpha=0.25, postnet_ssim_alpha=0.25, ga_alpha=5.0)       
-Loaded config: [BaseDatasetConfig(formatter='', dataset_name='', path='', meta_file_train='', ignored_speakers=None, language='', phonemizer='', meta_file_val='', meta_file_attn_mask='')]
-Datasets received: [BaseDatasetConfig(formatter='ljspeech', dataset_name='', path='dataset/', meta_file_train='metadata.csv', ignored_speakers=None, language='', phonemizer='', meta_file_val='', meta_file_attn_mask='')]
+Eval split size: 0.01
 Formatter name received: 'ljspeech'
- | > Found 4 files in C:\Users\trigg\Documents\GitHub\greg-ai\dataset
+ | > Found 21 files in C:\Users\trigg\Documents\GitHub\greg-ai\dataset
+ > Using model: Tacotron2
+ > Setting up Audio Processor...
+ | > sample_rate:22050
+ | > resample:False
+ | > num_mels:80
+ | > log_func:np.log10
+ | > min_level_db:-100
+ | > frame_shift_ms:None
+ | > frame_length_ms:None
+ | > ref_level_db:20
+ | > fft_size:1024
+ | > power:1.5
+ | > preemphasis:0.0
+ | > griffin_lim_iters:60
+ | > signal_norm:True
+ | > symmetric_norm:True
+ | > mel_fmin:0
+ | > mel_fmax:None
+ | > pitch_fmin:1.0
+ | > pitch_fmax:640.0
+ | > spec_gain:20.0
+ | > stft_pad_mode:reflect
+ | > max_norm:4.0
+ | > clip_norm:True
+ | > do_trim_silence:True
+ | > trim_db:45
+ | > do_sound_norm:False
+ | > do_amp_to_db_linear:True
+ | > do_amp_to_db_mel:True
+ | > do_rms_norm:False
+ | > db_level:None
+ | > stats_path:None
+ | > base:10
+ | > hop_length:256
+ | > win_length:1024
+ > Training Environment:
+ | > Backend: Torch
+ | > Mixed precision: False
+ | > Precision: float32
+ | > Current device: 0
+ | > Num. of GPUs: 1
+ | > Num. of CPUs: 12
+ | > Num. of Torch Threads: 6
+ | > Torch seed: 54321
+ | > Torch CUDNN: True
+ | > Torch CUDNN deterministic: False
+ | > Torch CUDNN benchmark: False
+ | > Torch TF32 MatMul: False
+ > Start Tensorboard: tensorboard --logdir=output\run-December-23-2024_02+41AM-6a2cc3d
+
+ > Model has 28274290 parameters
+
+ > EPOCH: 0/1000
+ --> output\run-December-23-2024_02+41AM-6a2cc3d
+
+
+> DataLoader initialization
+| > Tokenizer:
+        | > add_blank: False
+        | > use_eos_bos: False
+        | > use_phonemes: False
+| > Number of instances : 20
 Traceback (most recent call last):
-  File "C:\Users\trigg\.pyenv\pyenv-win\versions\3.10.9\lib\runpy.py", line 196, in _run_module_as_main      
+  File "C:\Users\trigg\Documents\GitHub\greg-ai\.venv\lib\site-packages\trainer\trainer.py", line 1833, in fit 
+    self._fit()
+  File "C:\Users\trigg\Documents\GitHub\greg-ai\.venv\lib\site-packages\trainer\trainer.py", line 1785, in _fit
+    self.train_epoch()
+  File "C:\Users\trigg\Documents\GitHub\greg-ai\.venv\lib\site-packages\trainer\trainer.py", line 1483, in train_epoch
+    self.train_loader = self.get_train_dataloader(
+  File "C:\Users\trigg\Documents\GitHub\greg-ai\.venv\lib\site-packages\trainer\trainer.py", line 949, in get_train_dataloader
+    return self._get_loader(
+  File "C:\Users\trigg\Documents\GitHub\greg-ai\.venv\lib\site-packages\trainer\trainer.py", line 909, in _get_loader
+    loader = model.get_data_loader(
+  File "C:\Users\trigg\Documents\GitHub\greg-ai\.venv\lib\site-packages\TTS\tts\models\base_tts.py", line 346, in get_data_loader
+    dataset.preprocess_samples()
+  File "C:\Users\trigg\Documents\GitHub\greg-ai\.venv\lib\site-packages\TTS\tts\datasets\dataset.py", line 346, in preprocess_samples
+    samples = self._compute_lengths(self.samples)
+  File "C:\Users\trigg\Documents\GitHub\greg-ai\.venv\lib\site-packages\TTS\tts\datasets\dataset.py", line 298, in _compute_lengths
+    audio_length = os.path.getsize(item["audio_file"]) / 16 * 8  # assuming 16bit audio
+  File "C:\Users\trigg\.pyenv\pyenv-win\versions\3.10.9\lib\genericpath.py", line 50, in getsize
+    return os.stat(filename).st_size
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'dataset/wavs\\audio_014.wav.wav'   
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\trigg\.pyenv\pyenv-win\versions\3.10.9\lib\runpy.py", line 196, in _run_module_as_main        
     return _run_code(code, main_globals, None,
   File "C:\Users\trigg\.pyenv\pyenv-win\versions\3.10.9\lib\runpy.py", line 86, in _run_code
     exec(code, run_globals)
-  File "C:\Users\trigg\Documents\GitHub\greg-ai\.venv\lib\site-packages\TTS\bin\train_tts.py", line 85, in <module>
+  File "C:\Users\trigg\Documents\GitHub\greg-ai\.venv\lib\site-packages\TTS\bin\train_tts.py", line 86, in <module>
     main()
-  File "C:\Users\trigg\Documents\GitHub\greg-ai\.venv\lib\site-packages\TTS\bin\train_tts.py", line 60, in main
-    train_samples, eval_samples = load_tts_samples(
-  File "C:\Users\trigg\Documents\GitHub\greg-ai\.venv\lib\site-packages\TTS\tts\datasets\__init__.py", line 134, in load_tts_samples
-    meta_data_eval, meta_data_train = split_dataset(meta_data_train, eval_size_per_dataset, eval_split_size) 
-  File "C:\Users\trigg\Documents\GitHub\greg-ai\.venv\lib\site-packages\TTS\tts\datasets\__init__.py", line 38, in split_dataset
-    eval_split_size > 0
-AssertionError:  [!] You do not have enough samples for the evaluation set. You can work around this setting the 'eval_split_size' parameter to a minimum of 0.25
+  File "C:\Users\trigg\Documents\GitHub\greg-ai\.venv\lib\site-packages\TTS\bin\train_tts.py", line 82, in main
+    trainer.fit()
+  File "C:\Users\trigg\Documents\GitHub\greg-ai\.venv\lib\site-packages\trainer\trainer.py", line 1860, in fit 
+    remove_experiment_folder(self.output_path)
+  File "C:\Users\trigg\Documents\GitHub\greg-ai\.venv\lib\site-packages\trainer\generic_utils.py", line 77, in remove_experiment_folder
+    fs.rm(experiment_path, recursive=True)
+  File "C:\Users\trigg\Documents\GitHub\greg-ai\.venv\lib\site-packages\fsspec\implementations\local.py", line 183, in rm
+    shutil.rmtree(p)
+  File "C:\Users\trigg\.pyenv\pyenv-win\versions\3.10.9\lib\shutil.py", line 750, in rmtree
+    return _rmtree_unsafe(path, onerror)
+  File "C:\Users\trigg\.pyenv\pyenv-win\versions\3.10.9\lib\shutil.py", line 620, in _rmtree_unsafe
+    onerror(os.unlink, fullname, sys.exc_info())
+  File "C:\Users\trigg\.pyenv\pyenv-win\versions\3.10.9\lib\shutil.py", line 618, in _rmtree_unsafe
+    os.unlink(fullname)
+PermissionError: [WinError 32] The process cannot access the file because it is being used by another process: 'C:/Users/trigg/Documents/GitHub/greg-ai/output/run-December-23-2024_02+41AM-6a2cc3d\\trainer_0_log.txt'       
+(.venv) PS C:\Users\trigg\Documents\GitHub\greg-ai> 
 (.venv) PS C:\Users\trigg\Documents\GitHub\greg-ai> 
