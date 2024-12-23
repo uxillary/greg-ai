@@ -9,8 +9,6 @@ config_path = "config.json"
 try:
     with open(config_path, "r") as f:
         config = json.load(f)
-    print("Config file loaded successfully:")
-    print(json.dumps(config, indent=4))  # Pretty-print the loaded config
 except Exception as e:
     print("Error loading config file:", e)
     sys.exit(1)
