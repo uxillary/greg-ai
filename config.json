@@ -7,7 +7,7 @@
       "path": "dataset/",
       "meta_file_train": "metadata.csv",
       "meta_file_val": "metadata_val.csv",
-      "eval_split_size": 0.75,
+      "eval_split_size": 1,
       "ignored_speakers": null,
       "language": "English",
       "phonemizer": "",
