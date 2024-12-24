@@ -1,5 +1,6 @@
 {
   "model": "Tacotron2",
+  "max_decoder_steps": 20000,
   "generator_model": "HiFi-GAN",
   "dataset_config": [
     {
@@ -34,7 +35,7 @@
     "eval_interval": 5,
     "use_cuda": true,
     "mixed_precision": false
-  },
+  },  
   "output_config": {
     "output_path": "output/",
     "checkpoint_dir": "output/checkpoints",
