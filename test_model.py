@@ -1,17 +1,16 @@
-import os
-from TTS.utils.synthesizer import Synthesizer
+from TTS.api import TTS
 
 # Paths
-checkpoint_path = "output/checkpoints/checkpoint_epoch_5.pth"  # Update this to the checkpoint you want to test
-config_path = "config.json"  # Your model's config file
+checkpoint_path = "output/checkpoints/checkpoint_epoch_5.pth"  # Path to your checkpoint
+config_path = "config.json"  # Path to the model's configuration
 output_path = "output/test-partial-output.wav"  # Path to save the generated audio
 
-# Initialize synthesizer
-print("Loading synthesizer...")
-synthesizer = Synthesizer(
-    checkpoint_path=checkpoint_path,
+# Initialize TTS with the checkpoint and config
+print("Loading model and synthesizer...")
+tts = TTS(
+    model_path=checkpoint_path,  # Checkpoint of the partially trained model
     config_path=config_path,
-    use_cuda=True  # Set to False if you don’t have a GPU
+    progress_bar=True
 )
 
 # Input text for synthesis
@@ -19,8 +18,6 @@ text = "This is a test of the partially trained model."
 
 # Generate audio
 print("Generating audio...")
-wav = synthesizer.tts(text)
+tts.tts_to_file(text=text, file_path=output_path)
 
-# Save audio file
-synthesizer.save_wav(wav, output_path)
 print(f"Audio saved to: {output_path}")
