@@ -2,6 +2,7 @@
 .venv\Scripts\activate
 
 python main.py
+python test_model.py
 
 #use coqui tts cli for training
 python -m TTS.bin.train_tts --config_path config.json --output_path output/
