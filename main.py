@@ -4,6 +4,7 @@ import os
 import sys
 import time
 import glob
+import torch
 
 # Debug: Ensure the configuration file exists and is loaded properly
 config_path = "config.json"
@@ -16,11 +17,15 @@ except Exception as e:
     sys.exit(1)
 
 # Add checkpoint saving logic
-def save_checkpoint(epoch, checkpoint_dir="output/checkpoints/"):
+def save_checkpoint(model, optimizer, epoch, checkpoint_dir="output/checkpoints/"):
     """Save a checkpoint with the current epoch."""
     os.makedirs(checkpoint_dir, exist_ok=True)
     checkpoint_path = os.path.join(checkpoint_dir, f"checkpoint_epoch_{epoch}.pth")
-    # Placeholder for actual checkpoint save logic (requires model reference)
+    torch.save({
+        "epoch": epoch,
+        "model_state_dict": model.state_dict(),
+        "optimizer_state_dict": optimizer.state_dict(),
+    }, checkpoint_path)
     print(f"Checkpoint saved at: {checkpoint_path}")
 
 # Keep only the latest checkpoints
@@ -52,7 +57,7 @@ def train_with_pause():
 
             # Save checkpoint every 10 epochs
             if epoch % 10 == 0:
-                save_checkpoint(epoch)
+                save_checkpoint(model, optimizer, epoch)
 
             # Clean up old checkpoints
             clean_old_checkpoints("output/checkpoints/", keep_last=5)
@@ -69,7 +74,7 @@ def train_with_pause():
 
     except KeyboardInterrupt:
         print("Training interrupted. Saving current checkpoint...")
-        save_checkpoint(epoch)
+        save_checkpoint(model, optimizer, epoch)
         print("Checkpoint saved. Exiting...")
         sys.exit(0)
 
