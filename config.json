@@ -1,6 +1,6 @@
 {
   "model": "Tacotron2",
-  "max_decoder_steps": 20000,
+  "max_decoder_steps": 33000,
   "generator_model": "HiFi-GAN",
   "dataset_config": [
     {

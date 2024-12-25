@@ -1,6 +1,7 @@
 import os
 import librosa
 import soundfile as sf
+import numpy as np  # Add this to fix the error
 
 def normalize_audio(input_dir, output_dir, target_db=-20.0):
     """Normalize all .wav files in a directory to a target dB."""
