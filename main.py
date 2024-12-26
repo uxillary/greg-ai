@@ -43,6 +43,10 @@ def train_with_pause():
     pause_file = "pause.txt"  # File to trigger pause
     auto_pause_interval = 5  # Number of epochs before an automatic pause
 
+    # Example model and optimizer (replace with actual instances)
+    model = torch.nn.Linear(10, 1)  # Replace with your actual model
+    optimizer = torch.optim.Adam(model.parameters(), lr=0.001)  # Replace with your optimizer
+
     try:
         for epoch in range(1, 1001):  # Replace with actual epoch range/config
             print(f"Starting epoch {epoch}/1000")
