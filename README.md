@@ -125,7 +125,7 @@ This project is licensed under the MIT License. See `LICENSE` for details.
 
 ## Contributing
 
-Contributions are welcome! Submit a pull request or report issues in the [issue tracker](https://github.com/uxillar/greg-ai/issues).
+Contributions are welcome! Submit a pull request or report issues in the [issue tracker](https://github.com/uxillary/greg-ai/issues).
 
 ---
 
