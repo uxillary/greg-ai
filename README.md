@@ -125,10 +125,10 @@ This project is licensed under the MIT License. See `LICENSE` for details.
 
 ## Contributing
 
-Contributions are welcome! Submit a pull request or report issues in the [issue tracker](https://github.com/your-repo/issues).
+Contributions are welcome! Submit a pull request or report issues in the [issue tracker](https://github.com/uxillary/greg-ai/issues).
 
 ---
 
 ## Contact
 
-For questions or support, contact [Your Name](mailto:your.email@example.com).
+For questions or support, contact [Adam](mailto:mail@ajstudios.online).
