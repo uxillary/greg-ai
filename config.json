@@ -20,7 +20,7 @@
   },
   "audio_config": {
     "sample_rate": 22050,
-    "fft_size": 1024,
+    "fft_size": 768,
     "win_length": 1024,
     "hop_length": 256,
     "num_mels": 80,
