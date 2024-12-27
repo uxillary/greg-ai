@@ -13,14 +13,12 @@ tts = TTS(
     progress_bar=True
 )
 
-# Force the 'is_multi_lingual' attribute
-tts.is_multi_lingual = False
-
 # Input text for synthesis
 text = "This is a test of the partially trained model."
 
 # Generate audio
 print("Generating audio...")
-tts.tts_to_file(text=text, file_path=output_path)
+tts.tts_to_file(text=text, file_path=output_path, language=None, speaker=None)
+
 
 print(f"Audio saved to: {output_path}")
