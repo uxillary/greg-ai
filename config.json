@@ -15,6 +15,9 @@
       "meta_file_attn_mask": ""
     }
   ],
+  "TTS": {
+    "is_multi_lingual": false
+  },
   "audio_config": {
     "sample_rate": 22050,
     "fft_size": 1024,

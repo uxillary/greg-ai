@@ -42,15 +42,15 @@ def clean_old_checkpoints(checkpoint_dir, keep_last=5):
 def train_with_pause():
     """Run training with pause and checkpoint features."""
     pause_file = "pause.txt"  # File to trigger pause
-    auto_pause_interval = 5  # Number of epochs before an automatic pause
+    auto_pause_interval = 50  # Number of epochs before an automatic pause
 
     # Example model and optimizer (replace with actual instances)
     model = torch.nn.Linear(10, 1)  # Replace with your actual model
     optimizer = torch.optim.Adam(model.parameters(), lr=0.001)  # Replace with your optimizer
 
     try:
-        for epoch in range(1, 1001):  # Replace with actual epoch range/config
-            print(f"Starting epoch {epoch}/1000")
+        for epoch in range(1, 101):  # Replace with actual epoch range/config
+            print(f"Starting epoch {epoch}/100")
 
             # Call the actual training function
             sys.argv = [

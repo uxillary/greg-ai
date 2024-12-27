@@ -2,7 +2,7 @@
 .venv\Scripts\activate
 
 python main.py
-python test_model.py
+python commands\test_model.py
 python commands\check_amplitude.py
 
 #use coqui tts cli for training

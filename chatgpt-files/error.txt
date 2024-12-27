@@ -1,22 +1,51 @@
-PS C:\Users\trigg\Documents\GitHub\greg-ai> .venv\Scripts\activate
 (.venv) PS C:\Users\trigg\Documents\GitHub\greg-ai> python commands\test_model.py
 Loading model and synthesizer...
+ > Using model: Tacotron2
+ > Setting up Audio Processor...
+ | > sample_rate:22050
+ | > resample:False
+ | > num_mels:80
+ | > log_func:np.log10
+ | > min_level_db:-100
+ | > frame_shift_ms:None
+ | > frame_length_ms:None
+ | > ref_level_db:20
+ | > fft_size:1024
+ | > power:1.5
+ | > preemphasis:0.0
+ | > griffin_lim_iters:60
+ | > signal_norm:True
+ | > symmetric_norm:True
+ | > mel_fmin:0
+ | > mel_fmax:None
+ | > pitch_fmin:1.0
+ | > pitch_fmax:640.0
+ | > spec_gain:20.0
+ | > stft_pad_mode:reflect
+ | > max_norm:4.0
+ | > clip_norm:True
+ | > do_trim_silence:True
+ | > trim_db:45
+ | > do_sound_norm:False
+ | > do_amp_to_db_linear:True
+ | > do_amp_to_db_mel:True
+ | > do_rms_norm:False
+ | > db_level:None
+ | > stats_path:None
+ | > base:10
+ | > hop_length:256
+ | > win_length:1024
+C:\Users\trigg\Documents\GitHub\greg-ai\.venv\lib\site-packages\TTS\utils\io.py:54: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  return torch.load(f, map_location=map_location, **kwargs)
+ > Model's reduction rate `r` is set to: 2
+Generating audio...
 Traceback (most recent call last):
-  File "C:\Users\trigg\Documents\GitHub\greg-ai\commands\test_model.py", line 10, in <module>
-    tts = TTS(
-  File "C:\Users\trigg\Documents\GitHub\greg-ai\.venv\lib\site-packages\TTS\api.py", line 65, in __init__
-    self.config = load_config(config_path) if config_path else None
-  File "C:\Users\trigg\Documents\GitHub\greg-ai\.venv\lib\site-packages\TTS\config\__init__.py", line 88, in load_config
-    with fsspec.open(config_path, "r", encoding="utf-8") as f:
-  File "C:\Users\trigg\Documents\GitHub\greg-ai\.venv\lib\site-packages\fsspec\core.py", line 105, in __enter__
-    f = self.fs.open(self.path, mode=mode)
-  File "C:\Users\trigg\Documents\GitHub\greg-ai\.venv\lib\site-packages\fsspec\spec.py", line 1303, in open
-    f = self._open(
-  File "C:\Users\trigg\Documents\GitHub\greg-ai\.venv\lib\site-packages\fsspec\implementations\local.py", line 195, in _open
-    return LocalFileOpener(path, mode, fs=self, **kwargs)
-  File "C:\Users\trigg\Documents\GitHub\greg-ai\.venv\lib\site-packages\fsspec\implementations\local.py", line 359, in __init__
-    self._open()
-  File "C:\Users\trigg\Documents\GitHub\greg-ai\.venv\lib\site-packages\fsspec\implementations\local.py", line 364, in _open
-    self.f = open(self.path, mode=self.mode)
-FileNotFoundError: [Errno 2] No such file or directory: 'C:/Users/trigg/Documents/GitHub/greg-ai/../config.json'    
-(.venv) PS C:\Users\trigg\Documents\GitHub\greg-ai> 
+  File "C:\Users\trigg\Documents\GitHub\greg-ai\commands\test_model.py", line 21, in <module>
+    tts.tts_to_file(text=text, file_path=output_path)
+  File "C:\Users\trigg\Documents\GitHub\greg-ai\.venv\lib\site-packages\TTS\api.py", line 332, in tts_to_file       
+    self._check_arguments(speaker=speaker, language=language, speaker_wav=speaker_wav, **kwargs)
+  File "C:\Users\trigg\Documents\GitHub\greg-ai\.venv\lib\site-packages\TTS\api.py", line 228, in _check_arguments  
+    if self.is_multi_lingual and language is None:
+  File "C:\Users\trigg\Documents\GitHub\greg-ai\.venv\lib\site-packages\torch\nn\modules\module.py", line 1931, in __getattr__
+    raise AttributeError(
+AttributeError: 'TTS' object has no attribute 'is_multi_lingual'
