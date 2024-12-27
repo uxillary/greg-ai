@@ -3,6 +3,9 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+# ignore gitignore (whitelist)
+!.venv\Lib\site-packages\TTS\bin\train_tts.py
+
 # Virtual environment
 .venv/
 env/

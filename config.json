@@ -15,9 +15,6 @@
       "meta_file_attn_mask": ""
     }
   ],
-  "TTS": {
-    "is_multi_lingual": false
-  },
   "audio_config": {
     "sample_rate": 22050,
     "fft_size": 768,
@@ -38,7 +35,7 @@
     "eval_interval": 5,
     "use_cuda": true,
     "mixed_precision": false
-  },  
+  },
   "output_config": {
     "output_path": "output/",
     "checkpoint_dir": "output/checkpoints",
