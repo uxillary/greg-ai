@@ -3,7 +3,7 @@
 
 python main.py
 python test_model.py
-check_amplitude.py
+python commands\check_amplitude.py
 
 #use coqui tts cli for training
 python -m TTS.bin.train_tts --config_path config.json --output_path output/

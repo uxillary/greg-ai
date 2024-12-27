@@ -1,4 +1,22 @@
-C:\Users\trigg\Documents\GitHub\greg-ai\.venv\lib\site-packages\TTS\tts\models\tacotron2.py:337: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
-  with autocast(enabled=False):  # use float32 for the criterion
-C:\Users\trigg\Documents\GitHub\greg-ai\.venv\lib\site-packages\torch\functional.py:534: UserWarning: torch.meshgrid: in an upcoming release, it will be required to pass the indexing argument. (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\builder\windows\pytorch\aten\src\ATen\native\TensorShape.cpp:3596.)
-  return _VF.meshgrid(tensors, **kwargs)  # type: ignore[attr-defined]
+PS C:\Users\trigg\Documents\GitHub\greg-ai> .venv\Scripts\activate
+(.venv) PS C:\Users\trigg\Documents\GitHub\greg-ai> python commands\test_model.py
+Loading model and synthesizer...
+Traceback (most recent call last):
+  File "C:\Users\trigg\Documents\GitHub\greg-ai\commands\test_model.py", line 10, in <module>
+    tts = TTS(
+  File "C:\Users\trigg\Documents\GitHub\greg-ai\.venv\lib\site-packages\TTS\api.py", line 65, in __init__
+    self.config = load_config(config_path) if config_path else None
+  File "C:\Users\trigg\Documents\GitHub\greg-ai\.venv\lib\site-packages\TTS\config\__init__.py", line 88, in load_config
+    with fsspec.open(config_path, "r", encoding="utf-8") as f:
+  File "C:\Users\trigg\Documents\GitHub\greg-ai\.venv\lib\site-packages\fsspec\core.py", line 105, in __enter__
+    f = self.fs.open(self.path, mode=mode)
+  File "C:\Users\trigg\Documents\GitHub\greg-ai\.venv\lib\site-packages\fsspec\spec.py", line 1303, in open
+    f = self._open(
+  File "C:\Users\trigg\Documents\GitHub\greg-ai\.venv\lib\site-packages\fsspec\implementations\local.py", line 195, in _open
+    return LocalFileOpener(path, mode, fs=self, **kwargs)
+  File "C:\Users\trigg\Documents\GitHub\greg-ai\.venv\lib\site-packages\fsspec\implementations\local.py", line 359, in __init__
+    self._open()
+  File "C:\Users\trigg\Documents\GitHub\greg-ai\.venv\lib\site-packages\fsspec\implementations\local.py", line 364, in _open
+    self.f = open(self.path, mode=self.mode)
+FileNotFoundError: [Errno 2] No such file or directory: 'C:/Users/trigg/Documents/GitHub/greg-ai/../config.json'    
+(.venv) PS C:\Users\trigg\Documents\GitHub\greg-ai> 

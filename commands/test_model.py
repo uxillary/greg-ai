@@ -1,9 +1,9 @@
 from TTS.api import TTS
 
 # Paths
-checkpoint_path = "output/checkpoints/checkpoint_epoch_5.pth"  # Path to your checkpoint
-config_path = "config.json"  # Path to the model's configuration
-output_path = "output/test-partial-output.wav"  # Path to save the generated audio
+checkpoint_path = "../output/run-December-27-2024_12+28AM-ddb72bf/best_model_5.pth"  # Path to your checkpoint
+config_path = "../config.json"  # Path to the model's configuration
+output_path = "../output/test-partial-output.wav"  # Path to save the generated audio
 
 # Initialize TTS with the checkpoint and config
 print("Loading model and synthesizer...")
