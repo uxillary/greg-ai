@@ -2,19 +2,17 @@
   "model": "Tacotron2",
   "max_decoder_steps": 50000,
   "generator_model": "HiFi-GAN",
-  "dataset_config": [
-    {
+  "dataset_config": {
       "formatter": "ljspeech",
       "path": "dataset/",
       "meta_file_train": "metadata.csv",
       "eval_split_size": 0.05,
       "meta_file_val": "metadata_val.csv",
       "ignored_speakers": null,
-      "language": "en",
+      "language": "English",
       "phonemizer": "",
       "meta_file_attn_mask": ""
-    }
-  ],
+   },
   "audio_config": {
     "sample_rate": 22050,
     "fft_size": 768,

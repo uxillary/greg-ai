@@ -7,10 +7,11 @@ import torch
 
 config_path = "config.json"
 
+# Load config
 try:
     with open(config_path, "r") as f:
         config = json.load(f)
-        print("Loaded config:", config)
+        # print("Loaded config:", config)
 except Exception as e:
     print("Error loading config file:", e)
     sys.exit(1)
@@ -34,38 +35,42 @@ def clean_old_checkpoints(checkpoint_dir, keep_last=5):
             os.remove(old_checkpoint)
             print(f"Removed old checkpoint: {old_checkpoint}")
 
-# Training with pause and checkpoint logic
-def train_with_pause():
-    pause_file = "pause.txt"
-    auto_pause_interval = 50  # Pause every 50 epochs
-
-    # Initialize model and optimizer
+# Training logic
+def train():
+    """Run training with checkpoint saving."""
     print("Starting training...")
-    model, optimizer = train_tts_main()  # Ensure this returns model and optimizer
 
+    # Set up command-line arguments for train_tts_main
+    sys.argv = [
+        "train_tts",
+        "--config_path", config_path,
+        "--output_path", "output/"
+    ]
+
+    # Call train_tts_main (it will handle training using the provided config)
+    train_tts_main()
+
+    # Example checkpointing logic, ensure model/optimizer are properly integrated in train_tts_main
     try:
-        for epoch in range(1, 101):
+        for epoch in range(1, 101):  # Replace 101 with your desired epoch count
             print(f"Starting epoch {epoch}/100")
 
-            # Training logic is handled in train_tts_main
+            # Save checkpoint every 10 epochs (Placeholder)
+            # Replace with actual model and optimizer saving if exposed by train_tts_main
             if epoch % 10 == 0:
-                save_checkpoint(model, optimizer, epoch)
+                # Uncomment and adjust these lines if train_tts_main exposes model/optimizer
+                # save_checkpoint(model, optimizer, epoch)
+                pass
 
+            # Clean up old checkpoints
             clean_old_checkpoints("output/checkpoints/", keep_last=5)
 
-            if os.path.exists(pause_file):
-                print("Pause file detected. Pausing training...")
-                break
-
-            if epoch % auto_pause_interval == 0:
-                print(f"Auto-pause after {epoch} epochs.")
-                break
-
     except KeyboardInterrupt:
-        print("Training interrupted. Saving current checkpoint...")
-        save_checkpoint(model, optimizer, epoch)
+        print("Training interrupted.")
+        # Uncomment if train_tts_main exposes model/optimizer
+        # save_checkpoint(model, optimizer, epoch)
         sys.exit(0)
 
 # Run training
-train_with_pause()
+train()
 print("Training Complete! Model and logs saved to:", "output/")
