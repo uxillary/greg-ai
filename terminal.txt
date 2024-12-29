@@ -25,3 +25,6 @@ print("CUDA version:", torch.version.cuda)
 
 # run metadata Speech To Text
 python generate-metadata.py
+
+# push after adding to gitignore whitelist
+git add -f /file_path.ext

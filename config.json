@@ -10,7 +10,7 @@
       "eval_split_size": 0.05,
       "meta_file_val": "metadata_val.csv",
       "ignored_speakers": null,
-      "language": "English",
+      "language": "en",
       "phonemizer": "",
       "meta_file_attn_mask": ""
     }
