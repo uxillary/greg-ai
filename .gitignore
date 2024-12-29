@@ -11,8 +11,8 @@ venv/
 VENV/
 
 # ignore gitignore (whitelist)
-!Lib\site-packages\TTS\bin\train_tts.py
-!Lib\site-packages\TTS\bin\__init__.py
+!.venv\Lib\site-packages\TTS\bin\train_tts.py
+!.venv\Lib\site-packages\TTS\bin\__init__.py
 
 # Jupyter Notebook checkpoints
 .ipynb_checkpoints

@@ -1,3 +1,10 @@
+Mouse Buttons -
+
+S1  Ctrl A
+S4  Ctrl C
+S7  Ctrl V
+S10 Ctrl Z    S11 Shift Alt Down    S12 Ctrl S
+
 # start venv:
 .venv\Scripts\activate
 
