@@ -1,4 +1,5 @@
- python main.py
+ .venv\Scripts\activate
+(.venv) PS C:\Users\trigg\Documents\GitHub\greg-ai> python main.py
 Starting training...
 args.config_path: config.json
 args.continue_path:
@@ -12,3 +13,4 @@ Traceback (most recent call last):
   File "C:\Users\trigg\Documents\GitHub\greg-ai\.venv\lib\site-packages\TTS\bin\train_tts.py", line 52, in main
     raise ValueError("The 'language' field is missing or empty in the dataset configuration.")
 ValueError: The 'language' field is missing or empty in the dataset configuration.
+(.venv) PS C:\Users\trigg\Documents\GitHub\greg-ai> 

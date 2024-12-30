@@ -5,7 +5,19 @@ import sys
 import glob
 import torch
 
-config_path = "config.json"
+import argparse
+
+def parse_args():
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--config_path', type=str, default='config.json',
+                        help='Path to the main config file.')
+    # Add a dataset_config argument:
+    parser.add_argument('--dataset_config', type=str, default=None,
+                        help='Path to the dataset config file.')
+    return parser.parse_args()
+
+
+config_path = "aj_config.json"
 
 # Load config
 try:
@@ -46,6 +58,8 @@ def train():
         "--config_path", config_path,
         "--output_path", "output/"
     ]
+    
+    print("sys.argv = ", sys.argv)
 
     # Call train_tts_main (it will handle training using the provided config)
     train_tts_main()
