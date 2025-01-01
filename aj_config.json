@@ -4,14 +4,14 @@
   "generator_model": "HiFi-GAN",
   "dataset_config": {
       "formatter": "ljspeech",
+      "dataset_name": "",
       "path": "dataset/",
       "meta_file_train": "metadata.csv",
-      "eval_split_size": 0.05,
-      "meta_file_val": "metadata_val.csv",
       "ignored_speakers": null,
       "language": "English",
       "phonemizer": "",
-      "meta_file_attn_mask": ""
+      "meta_file_val": "metadata_val.csv",
+      "eval_split_size": 0.05
    },
   "audio_config": {
     "sample_rate": 22050,
