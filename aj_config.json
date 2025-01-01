@@ -10,8 +10,8 @@
       "meta_file_train": "metadata.csv",
       "ignored_speakers": null,
       "language": "English",
-      "lang" : "en",
-      "phonemizer": "",
+      "lang" : "en-us",
+      "phonemizer": "English",
       "meta_file_val": "metadata_val.csv",
       "eval_split_size": 0.05
     }
