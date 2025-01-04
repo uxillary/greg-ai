@@ -1,0 +1,11 @@
+
+[BaseDatasetConfig(
+formatter='', 
+dataset_name='', 
+path='', 
+meta_file_train='', 
+ignored_speakers=None, 
+language='', 
+phonemizer='', 
+meta_file_val='', 
+meta_file_attn_mask='')]
