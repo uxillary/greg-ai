@@ -39,7 +39,11 @@
     "mixed_precision": true,
     "cudnn_benchmark": true,
     "ga_loss_weight": 1.0,
-    "stopnet_loss_weight": 0.5
+    "stopnet_loss_weight": 0.5,
+    "lr_scheduler": "NoamLR",
+    "lr_scheduler_params": {
+      "warmup_steps": 4000
+    }
   },
   "output_config": {
     "output_path": "output/",
