@@ -18,7 +18,7 @@
   ],
   "audio_config": {
     "sample_rate": 22050,
-    "fft_size": 768,
+    "fft_size": 512,
     "win_length": 1024,
     "hop_length": 256,
     "num_mels": 80,
@@ -27,7 +27,7 @@
   },
   "training_config": {
     "epochs": 100,
-    "batch_size": 16,
+    "batch_size": 2,
     "gradient_clip": 1.0,
     "learning_rate": 0.0001,
     "num_loader_workers": 4,
@@ -35,7 +35,8 @@
     "checkpoint_interval": 5,
     "eval_interval": 5,
     "use_cuda": true,
-    "mixed_precision": false
+    "mixed_precision": true,
+    "cudnn_benchmark": true
   },
   "output_config": {
     "output_path": "output/",
