@@ -12,6 +12,10 @@ python main.py
 python commands\test_model.py
 python commands\check_amplitude.py
 
+ngc registry model download-version "nvidia/tacotron2_ljspeech:2"
+
+python C:\Users\trigg\Documents\GitHub\greg-ai\.venv\Lib\site-packages\TTS\bin\synthesize.py --config_path output/run-February-16-2025_10+45PM-44c7181/config.json --checkpoint_path output/run-February-16-2025_10+45PM-44c7181/best_model.pth --text "Hello, how are you?" --out_path test_output.wav
+
 #use coqui tts cli for training
 python -m TTS.bin.train_tts --config_path config.json --output_path output/
 
