@@ -12,5 +12,6 @@ meta_file_val='',
 meta_file_attn_mask='')]
 
 
+
 python Lib/site-packages/TTS/bin/synthesize.py --config_path output/run-February-16-2025_10+45PM-44c7181/config.json --checkpoint_path output/run-February-16-2025_10+45PM-44c7181/best_model.pth --text "Hello, how are you?" --out_path test_output.wav
 
