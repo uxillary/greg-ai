@@ -1,0 +1,34 @@
+{
+    "output_path": "output/",
+    "datasets": [
+        {
+            "formatter": "ljspeech",
+            "path": "dataset/",
+            "meta_file_train": "metadata.csv",
+            "language": "en"
+        }
+    ],
+    "model": "XTTS",
+    "run_name": "my_xtts_voice",
+    "batch_size": 16,
+    "eval_batch_size": 8,
+    "epochs": 100,
+    "lr": 0.0001,
+    "scheduler_after_epoch": true,
+    "save_step": 5000,
+    "save_checkpoints": true,
+    "use_phonemes": false,
+    "audio": {
+        "sample_rate": 22050,
+        "fft_size": 1024,
+        "win_length": 1024,
+        "hop_length": 256,
+        "num_mels": 80,
+        "trim_db": 45,
+        "power": 1.5
+    },
+    "distributed_backend": "nccl",
+    "mixed_precision": false,
+    "use_speaker_embedding": false,
+    "grad_clip": 5.0
+}
