@@ -1,0 +1,20 @@
+.venv) PS C:\Users\trigg\Documents\GitHub\greg-ai\TTS> python TTS/bin/train_tts.py --config_path xtts_config.json 
+Traceback (most recent call last):
+  File "C:\Users\trigg\Documents\GitHub\greg-ai\TTS\TTS\bin\train_tts.py", line 71, in <module>
+    main()
+  File "C:\Users\trigg\Documents\GitHub\greg-ai\TTS\TTS\bin\train_tts.py", line 30, in main
+    config = load_config(args.config_path)
+  File "C:\Users\trigg\Documents\GitHub\greg-ai\TTS\TTS\config\__init__.py", line 88, in load_config
+    with fsspec.open(config_path, "r", encoding="utf-8") as f:
+  File "C:\Users\trigg\Documents\GitHub\greg-ai\.venv\lib\site-packages\fsspec\core.py", line 105, in __enter__       
+    f = self.fs.open(self.path, mode=mode)
+  File "C:\Users\trigg\Documents\GitHub\greg-ai\.venv\lib\site-packages\fsspec\spec.py", line 1303, in open
+    f = self._open(
+  File "C:\Users\trigg\Documents\GitHub\greg-ai\.venv\lib\site-packages\fsspec\implementations\local.py", line 195, in _open
+    return LocalFileOpener(path, mode, fs=self, **kwargs)
+  File "C:\Users\trigg\Documents\GitHub\greg-ai\.venv\lib\site-packages\fsspec\implementations\local.py", line 359, in __init__
+    self._open()
+  File "C:\Users\trigg\Documents\GitHub\greg-ai\.venv\lib\site-packages\fsspec\implementations\local.py", line 364, in _open
+    self.f = open(self.path, mode=self.mode)
+FileNotFoundError: [Errno 2] No such file or directory: 'C:/Users/trigg/Documents/GitHub/greg-ai/TTS/xtts_config.json'
+(.venv) PS C:\Users\trigg\Documents\GitHub\greg-ai\TTS> 
