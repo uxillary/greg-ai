@@ -3,6 +3,9 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+#not for repo
+/not-for-repo
+
 # Virtual environment
 .venv/
 env/
